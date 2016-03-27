@@ -1,0 +1,19 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach (var image in Model)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="@image" class="img-responsive" />
+        </div>
+    </div>
+}
+@if (Model.Any() == false)
+{
+    <div class="alert alert-warning">
+        <h2>You have not uploaded any images yet! Click <a href="@Url.Action("Upload", "Home")">here</a> to upload an image.</h2>
+    </div>
+}
