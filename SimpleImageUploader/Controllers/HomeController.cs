@@ -19,7 +19,7 @@ namespace SimpleImageUploader.Controllers
             List<string> imageFiles = new List<string>();
             foreach (string filename in files)
             {
-                if (Regex.IsMatch(filename, @".jpg|.png|.gif$"))
+                if (Regex.IsMatch(filename, @".jpg|.png|.gif$", RegexOptions.IgnoreCase))
                     imageFiles.Add(filename);
             }
             return View(imageFiles);

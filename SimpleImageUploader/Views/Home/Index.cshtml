@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<string>
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "List images";
 }
+
+<br/>
+<h1>Uploaded images</h1>
+<hr />
+<br/>
 
 @foreach (var image in Model)
 {
     <div class="row">
         <div class="col-sm-12">
-            <img src="@image" class="img-responsive" />
+            <img src="@Path.Combine("/Content/images/", Path.GetFileName(image))" class="img-responsive" style="max-width:600px; height: auto;" />
         </div>
     </div>
+    <br/>
 }
 @if (Model.Any() == false)
 {

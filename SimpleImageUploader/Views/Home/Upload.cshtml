@@ -1,15 +1,17 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Upload";
 }
 <h2>Upload an image, the wrong way</h2>
 <form method="post" enctype="multipart/form-data" action="@Url.Action("WrongUpload", "Home")">
     <input type="file" name="file" class="btn btn-default" value="Upload image - the wrong way" />
+    <button type="submit" class="btn btn-primary">Start uploading</button>
 </form>
 <hr />
 
 <h2>Upload an image, the right way</h2>
 <form method="post" enctype="multipart/form-data" action="@Url.Action("RightUpload", "Home")">
     <input type="file" name="file" class="btn btn-default" value="Upload image - the right way" />
+    <button type="submit" class="btn btn-primary">Start uploading</button>
 </form>
 
 <h3>To see the uploaded images click <a href="@Url.Action("Index", "Home")">here</a></h3>
